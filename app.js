@@ -26,3 +26,13 @@ jsonRadio.addEventListener('click', ()=>{
 
 
 });
+
+
+
+let addParam = document.getElementById('addParams');
+
+addParam.addEventListener('click', ()=>{
+    let param =document.getElementById('params');
+
+
+});
