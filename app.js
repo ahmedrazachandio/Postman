@@ -50,7 +50,7 @@ addParam.addEventListener('click', ()=>{
                             <input type="text" class="form-control" id="parameterKey1" placeholder="Enter Parameter ${addedParamsCount +2} Key">
                         </div>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="parameterValue${addedParamsCount +2}" placeholder="Enter Parameter ${addedParamsCount +2} Value">
+                            <input type="text" class="form-control" id="parameterValue" placeholder="Enter Parameter ${addedParamsCount +2} Value">
                         </div>
                         <button class="btn btn-primary col-sm-1 deleteParam" id="deleteParam">-</button>
                     </div>`;
@@ -62,12 +62,16 @@ addParam.addEventListener('click', ()=>{
     let deleteParam = document.getElementByClassName('deleteParam');
     for (item of deleteParam){
         item.addEventListener('click', (e) =>{
-            e.target.paramElement.remove();
+            e.target.parentElement.remove();
         })
     }
-});
     addedParamsCount ++;
+})
     
 
 // If ther user clicks on submit button
-let submit = document.getElementById('submit')
+let submit = document.getElementById('submit');
+submit.addEventListener('click', () =>{
+    // show please wait in the response box to request patience from the user
+    document.getElementById('responseJsonText').value = "Please Wait... Fateching Response .."
+})
