@@ -57,7 +57,7 @@ addParam.addEventListener('click', ()=>{
     // Convert the element string to DOM node
     let paramElement = getElementFromString(string);
     params.appendChild(paramElement);
-});
+
     //Add an event listener to remove the parameter on clicking - button
     let deleteParam = document.getElementByClassName('deleteParam');
     for (item of deleteParam){
@@ -65,11 +65,9 @@ addParam.addEventListener('click', ()=>{
             e.target.paramElement.remove();
         })
     }
-
-
-
-
+});
     addedParamsCount ++;
     
 
-
+// If ther user clicks on submit button
+let submit = document.getElementById('submit')
