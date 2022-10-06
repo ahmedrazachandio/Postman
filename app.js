@@ -1,10 +1,17 @@
 // Ahmed Raza 
+console.log("Post Master");
+// Utility Functions
+// 1. Utility function to get Dom element from string
+function getElementFromString(string) {
+    let div = document.createElement('div');
+    div.innerHTML = string;
+    return div.firstElementChild;
+}
 
 
 // Initialize no of parameters
 let addedParamsCount = 0;
 
-console.log("Post Master");
 // Hide the parameters box initially
 let parametersBox = document.getElementById('parametersBox');
 parametersBox.style.display = 'none';
@@ -37,7 +44,7 @@ let addParam = document.getElementById('addParam');
 
 addParam.addEventListener('click', ()=>{
     let params =document.getElementById('params');
-    let string = ` <div class="form row">
+    let string = ` <div class="form row my-2">
                         <label for="url" class="form-label col-sm-2 col-form-label">Parameter ${addedParamsCount +2}</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="parameterKey1" placeholder="Enter Parameter ${addedParamsCount +2} Key">
@@ -47,6 +54,9 @@ addParam.addEventListener('click', ()=>{
                         </div>
                         <button class="btn btn-primary col-sm-1" id="addParam">-</button>
                     </div>`;
+    // Convert the element string to DOM node
+    let paramElement = getElementFromString(string);
+    params.appendChild(paramElement);
     addedParamsCount ++;
     
 
