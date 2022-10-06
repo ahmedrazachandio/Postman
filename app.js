@@ -52,13 +52,24 @@ addParam.addEventListener('click', ()=>{
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="parameterValue${addedParamsCount +2}" placeholder="Enter Parameter ${addedParamsCount +2} Value">
                         </div>
-                        <button class="btn btn-primary col-sm-1" id="addParam">-</button>
+                        <button class="btn btn-primary col-sm-1 deleteParam" id="deleteParam">-</button>
                     </div>`;
     // Convert the element string to DOM node
     let paramElement = getElementFromString(string);
     params.appendChild(paramElement);
+});
+    //Add an event listener to remove the parameter on clicking - button
+    let deleteParam = document.getElementByClassName('deleteParam');
+    for (item of deleteParam){
+        item.addEventListener('click', (e) =>{
+            e.target.paramElement.remove();
+        })
+    }
+
+
+
+
     addedParamsCount ++;
     
 
 
-});
