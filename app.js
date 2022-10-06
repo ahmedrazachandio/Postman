@@ -75,5 +75,11 @@ submit.addEventListener('click', () =>{
     // show please wait in the response box to request patience from the user
     document.getElementById('responseJsonText').value = "Please Wait... Fateching Response ..";
     //fatch all the values user has entered
-    
+    let url = document.getElementById('url').value;
+    let requestType = document.querySelector("input[name='requestType']:checked").value;
+    let contentType = document.querySelector("input[name='contentType']:checked").value;
+    // Log all the values in the console for debugging
+    console.log("Url is ", url);
+    console.log("requestType is ", requestType);
+    console.log("contentType is ", contentType);
 })
