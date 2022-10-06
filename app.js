@@ -73,5 +73,7 @@ addParam.addEventListener('click', ()=>{
 let submit = document.getElementById('submit');
 submit.addEventListener('click', () =>{
     // show please wait in the response box to request patience from the user
-    document.getElementById('responseJsonText').value = "Please Wait... Fateching Response .."
+    document.getElementById('responseJsonText').value = "Please Wait... Fateching Response ..";
+    //fatch all the values user has entered
+    
 })
