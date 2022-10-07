@@ -78,8 +78,27 @@ submit.addEventListener('click', () =>{
     let url = document.getElementById('url').value;
     let requestType = document.querySelector("input[name='requestType']:checked").value;
     let contentType = document.querySelector("input[name='contentType']:checked").value;
+    
+    //If user has used params option instead of json, collect all parameters in an object
+    if(contentType == "params"){
+        data = {};
+        for(i=0; i<addedParamsCount+1; i++){
+            if(document.getElementById('parameterKey' + (i+1)) != undefined){
+            let key = document.getElementById('parameterKey' + (i+1)).value;
+            let value = document.getElementById('parameterValue' + (i+1)).value;
+            data[key] = value;
+            }
+            data = JSON.stringify(data);
+        }
+    }
+    else{
+        data = document.getElementById('requestJsonText').value;
+    }
+
+
     // Log all the values in the console for debugging
     console.log("Url is ", url);
     console.log("requestType is ", requestType);
     console.log("contentType is ", contentType);
+    console.log("data is ", data);
 })
